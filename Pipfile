@@ -11,5 +11,7 @@ name = "pypi"
 
 [packages]
 
-Django = "<1.12,>=1.11"
+django = "<1.12,>=1.11"
 wagtail = "<1.14,>=1.13"
+python-decouple = "*"
+unipath = "*"

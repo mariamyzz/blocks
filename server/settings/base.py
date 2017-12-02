@@ -15,13 +15,15 @@ from __future__ import absolute_import, unicode_literals
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR = os.path.dirname(PROJECT_DIR)
+from server.settings.config import BASE_DIR, config  # NOQA
 
+
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
+SECRET_KEY = config('DJANGO_SECRET_KEY')
 
 # Application definition
 
@@ -30,7 +32,7 @@ INSTALLED_APPS = [
     'search',
     'blocks',
 
-    # For a list of icon names, see the Wagtail style guide, which can be enabled by adding 
+    # For a list of icon names, see the Wagtail style guide
     'wagtail.contrib.wagtailstyleguide',
 
     'wagtail.wagtailforms',
