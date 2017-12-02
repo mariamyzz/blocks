@@ -10,7 +10,7 @@ from wagtail.wagtailadmin.edit_handlers import TabbedInterface, ObjectList, Fiel
 
 class HomePage(Page):
     body = StreamField([
-        ('personquote', QuotePersonBlock()),
+        ('quote-person-block', QuotePersonBlock()),
     ])
 
     common_tab = [
