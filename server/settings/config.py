@@ -14,9 +14,9 @@ BASE_DIR = Path(__file__).parent.parent.parent
 
 # Defines settings file
 SETTINGS = {
-    'True': "server.settings.dev",
-    'False': "server.settings.production"
+    True: "server.settings.dev",
+    False: "server.settings.production"
 }
 
 config = AutoConfig(search_path=os.path.join(BASE_DIR, 'config'))
-SETTINGS_FILE = SETTINGS[config('DEBUG')]
+SETTINGS_FILE = SETTINGS[config('DEBUG', cast=bool)]

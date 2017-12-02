@@ -23,7 +23,13 @@ PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
+# Django secret key from common config
+
 SECRET_KEY = config('DJANGO_SECRET_KEY')
+
+# Define mode
+
+DEBUG = bool(config('DEBUG', cast=bool))
 
 # Application definition
 
