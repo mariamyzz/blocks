@@ -1,0 +1,30 @@
+.block-image {
+  width: 100%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: lightgray;
+  overflow: hidden; }
+  .block-image img {
+    margin: auto; }
+
+.block-quoteperson {
+  width: 100%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: lightblue;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .block-quoteperson p, .block-quoteperson q, .block-quoteperson img {
+    margin: auto; }
+  .block-quoteperson q {
+    text-align: center;
+    width: 400px; }
+  .block-quoteperson img {
+    border-radius: 64px; }

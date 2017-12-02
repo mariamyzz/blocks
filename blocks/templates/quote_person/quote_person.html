@@ -2,8 +2,8 @@
     {{ value.quote }}
 </q>
 
-{{ value.first_name }}
-{{ value.surname }}
+<p>{{ value.first_name }}
+{{ value.surname }}</p>
 {% if value.photo %}
     <img src="{{ value.photo.file.url }}" alt="">
 {% endif %}

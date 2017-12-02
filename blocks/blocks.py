@@ -14,4 +14,14 @@ class QuotePersonBlock(blocks.StructBlock):
     class Meta:
         icon = 'openquote'
         label = 'Personal quote'
-        template='blocks/streamfield/quote_person.html'
+        template='quote_person/quote_person.html'
+
+
+class ImageBlock(blocks.StructBlock):
+    photo = ImageChooserBlock(required=True)
+    description = blocks.CharBlock(required=False)
+
+    class Meta:
+        icon = 'image'
+        label = 'Image'
+        template='image/image.html'
