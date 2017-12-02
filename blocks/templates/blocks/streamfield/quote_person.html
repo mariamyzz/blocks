@@ -1,0 +1,9 @@
+<q>
+    {{ value.quote }}
+</q>
+
+{{ value.first_name }}
+{{ value.surname }}
+{% if value.photo %}
+    <img src="{{ value.photo.file.url }}" alt="">
+{% endif %}

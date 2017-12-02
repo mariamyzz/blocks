@@ -5,13 +5,13 @@ from wagtail.wagtailcore import blocks
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
 
-class PersonBlock(blocks.StructBlock):
+class QuotePersonBlock(blocks.StructBlock):
+    quote = blocks.CharBlock(required=True)
     first_name = blocks.CharBlock(required=True)
     surname = blocks.CharBlock(required=True)
-    photo = ImageChooserBlock()
-    biography = blocks.RichTextBlock()
+    photo = ImageChooserBlock(required=False)
 
     class Meta:
-        # https://github.com/wagtail/wagtail/blob/master/wagtail/contrib/styleguide/templates/wagtailstyleguide/base.html#L610
-        icon = 'user'
-        template='blocks/streamfield/person.html'
+        icon = 'openquote'
+        label = 'Personal quote'
+        template='blocks/streamfield/quote_person.html'

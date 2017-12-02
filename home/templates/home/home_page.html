@@ -1,7 +1,17 @@
 {% extends "base.html" %}
+{% load static wagtailuserbar %}
 
-{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">
+{% endblock %}
+
+{% block body_class %}{% endblock %}
 
 {% block content %}
     {{ page.body }}
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'js/homepage.js' %}"></script>  
 {% endblock %}
