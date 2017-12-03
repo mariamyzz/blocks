@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b838929988aeee6ffc745d97ae9effd4a161ae3b44a3fccda2e66dc34cfc9773"
+            "sha256": "3f88ed97515bda04bf40ce0f53e704f4f643a788b1bc28e2803267e45e19d72b"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -17,7 +17,9 @@
             "sys_platform": "darwin"
         },
         "pipfile-spec": 6,
-        "requires": {},
+        "requires": {
+            "python_version": "3.6"
+        },
         "sources": [
             {
                 "name": "pypi",
@@ -51,10 +53,10 @@
         },
         "django": {
             "hashes": [
-                "sha256:75ce405d60f092f6adf904058d023eeea0e6d380f8d9c36134bac73da736023d",
-                "sha256:8918e392530d8fc6965a56af6504229e7924c27265893f3949aa0529cd1d4b99"
+                "sha256:fad46f44f6f4de66aacaa92e7753dbc4fe3ae834aa2daffaca0bf16c64798186",
+                "sha256:fed3e79bb5a3a8d5eb054c7a1ec1de229ef3f43335a67821cc3e489e9582f711"
             ],
-            "version": "==1.11.7"
+            "version": "==1.11.8"
         },
         "django-modelcluster": {
             "hashes": [

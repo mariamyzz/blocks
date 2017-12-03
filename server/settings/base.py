@@ -29,14 +29,16 @@ SECRET_KEY = config('DJANGO_SECRET_KEY')
 
 # Define mode
 
-DEBUG = bool(config('DEBUG', cast=bool))
+DEBUG = config('DEBUG', cast=bool)
 
 # Application definition
 
 INSTALLED_APPS = [
+
+    # Important thing – blocks should be first
+    'blocks',
     'home',
     'search',
-    'blocks',
 
     # For a list of icon names, see the Wagtail style guide
     'wagtail.contrib.wagtailstyleguide',

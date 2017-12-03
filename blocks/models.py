@@ -10,9 +10,11 @@ PATH_TO_BLOCKS = os.path.join(PATH, 'templates')
 def split_filename(file_name: str) -> tuple:
     return os.path.splitext(file_name)
 
+
 def is_python_script(file_name: str) -> bool:
     _, extension = split_filename(file_name)
     return extension == '.py'
+
 
 def find_py_files(path: str) -> list:
     py_files = []
@@ -25,11 +27,13 @@ def find_py_files(path: str) -> list:
             )
     return py_files
 
+
 def make_class_name(snake_case: str) -> str:
     words = snake_case.split('_')
     capitalize_words = [word.capitalize() for word in words]
     capitalize_words.append('Block')
     return ''.join(capitalize_words)
+
 
 def format_name(py_files: tuple) -> list:
     formatted_names = []
@@ -41,9 +45,10 @@ def format_name(py_files: tuple) -> list:
             {
                 'class_name': class_name, 
                 'path_to_file': path_to_file
-                }
+            }
         )
     return formatted_names
+
 
 def register_imports(formated_names: list):
     for item in formated_names:
@@ -53,9 +58,10 @@ def register_imports(formated_names: list):
             )
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
+        # registering all classes
+        globals()[item['class_name']] = getattr(module, item['class_name'])
 
-
-# py_files = find_py_files(PATH_TO_BLOCKS)
-# formatted_names = format_name(py_files)
-# register_imports(formatted_names)
-# print(sys.modules.keys())
+# run registering
+py_files = find_py_files(PATH_TO_BLOCKS)
+formatted_names = format_name(py_files)
+register_imports(formatted_names)

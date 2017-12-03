@@ -6,13 +6,13 @@ from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import StreamField
 from wagtail.wagtailadmin.edit_handlers import TabbedInterface, ObjectList, FieldPanel, StreamFieldPanel
 
-from blocks.blocks import QuotePersonBlock, ImageBlock
+from blocks.models import QuotePersonBlock, ImageBlock # NOQA
 
 
 class HomePage(Page):
     body = StreamField([
         ('quoteperson', QuotePersonBlock()),
-        ('image', ImageBlock()),
+        ('image', ImageBlock())
     ])
 
     common_tab = [

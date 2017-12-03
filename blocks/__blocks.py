@@ -3,8 +3,15 @@ from __future__ import absolute_import, unicode_literals
 import os, sys
 import importlib.util
 
+# blocks.StructBlock
+
+
+from django.utils.functional import lazy
+
 PATH = os.path.dirname(os.path.abspath(__file__))
 PATH_TO_BLOCKS = os.path.join(PATH, 'templates')
+
+REG_DICT = {}
 
 
 def split_filename(file_name: str) -> tuple:
@@ -41,19 +48,46 @@ def format_name(py_files: tuple) -> list:
             {
                 'class_name': class_name, 
                 'path_to_file': path_to_file
-                }
+            }
         )
     return formatted_names
 
 def register_imports(formated_names: list):
+    result = []
     for item in formated_names:
         spec = importlib.util.spec_from_file_location(
-            item['class_name'], 
+            'block_module', 
             item['path_to_file']
             )
+        print('spec is ...', spec)
         module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(module)
+        print('register_imports module is ...', module)
+        REG_DICT[item['class_name']] = spec, module
+        result.append(
+            (spec, module)
+            )
+    return result
 
+def exec_modules(bundles):
+    for spec, module in bundles:
+        spec.loader.exec_module(module)
+        print('module is ...', module)
+        print('execute is ...', dir(module))
+
+def lazy_get_block(name):
+    spec, module = REG_DICT[name]
+    spec.loader.exec_module(module)
+    print(module)
+    print(dir(module))
+    return getattr(module, name)
+
+def get_block(name):
+    from wagtail.wagtailcore import blocks
+    return lazy(
+        lambda: lazy_get_block(name), blocks.StructBlock
+    )()
+
+#blocks.StructBlock
 
 # py_files = find_py_files(PATH_TO_BLOCKS)
 # formatted_names = format_name(py_files)
