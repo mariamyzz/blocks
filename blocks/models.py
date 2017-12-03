@@ -4,7 +4,7 @@ import os, sys
 import importlib.util
 
 PATH = os.path.dirname(os.path.abspath(__file__))
-PATH_TO_BLOCKS = os.path.join(PATH, 'templates')
+PATH_TO_BLOCKS = os.path.join(PATH, 'templates/blocks')
 
 
 def split_filename(file_name: str) -> tuple:

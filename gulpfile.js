@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
+    sassGlob = require('gulp-sass-glob'),
     watch = require('gulp-watch'),
     concat = require('gulp-concat'),
     prefixer = require('gulp-autoprefixer'),
@@ -21,7 +22,7 @@ var path = {
     },
     app: {
         js: 'blocks/templates/**/*.js',
-        style: 'blocks/templates/**/*.sass'
+        style: 'blocks/templates/general.sass'
     },
     watch: {
         js: 'blocks/templates/**/*.js',
@@ -41,6 +42,7 @@ gulp.task('js:build', function () {
 gulp.task('style:build', function () {
     gulp.src(path.app.style)
         .pipe(concat('common.sass'))
+        .pipe(sassGlob())
         .pipe(sass())
         .pipe(prefixer())
         .pipe(gulp.dest(path.build.style));
