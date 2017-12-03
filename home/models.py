@@ -14,7 +14,7 @@ class HomePage(Page):
         ('QuotePerson', QuotePersonBlock()),
         ('Image', ImageBlock()),
         ('HeaderDescription', HeaderDescriptionBlock())
-    ])
+    ], blank=True)
 
     common_tab = [
         FieldPanel('title'),

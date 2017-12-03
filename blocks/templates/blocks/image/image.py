@@ -12,4 +12,4 @@ class ImageBlock(blocks.StructBlock):
     class Meta:
         icon = 'image'
         label = 'Image'
-        template='image/image.html'
+        template='blocks/image/image.html'

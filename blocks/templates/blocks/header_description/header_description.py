@@ -9,6 +9,6 @@ class HeaderDescriptionBlock(blocks.StructBlock):
     description = blocks.CharBlock(required=False)
 
     class Meta:
-        icon = 'image'
-        label = 'Header & Description'
-        template='header_description/header_description.html'
+        icon = 'pilcrow'
+        label = 'Header & description'
+        template='blocks/header_description/header_description.html'

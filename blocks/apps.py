@@ -7,5 +7,5 @@ class BlocksConfig(AppConfig):
     name = 'blocks'
 
     def ready(self):
-        print('Blocks collection added.\n')
+        print('\nBlocks collection added...')
         

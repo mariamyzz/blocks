@@ -14,4 +14,4 @@ class QuotePersonBlock(blocks.StructBlock):
     class Meta:
         icon = 'openquote'
         label = 'Personal quote'
-        template='quote_person/quote_person.html'
+        template='blocks/quote_person/quote_person.html'
