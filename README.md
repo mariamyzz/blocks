@@ -25,5 +25,6 @@ You will need
 
 Run
 ---
+- ``bash start`` or commands below
 - ``pipenv run python manage.py runserver``
 - ``gulp``
