@@ -1,5 +1,5 @@
-Blocks contributors (sorted alphabetically)
-============================================
+Blocks contributors
+===================
 
 * **[Andrey Ermilov](https://github.com/AndreyErmilov)**
 * **[Leonid Shvechikov](https://github.com/shvechikov)**
